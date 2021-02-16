@@ -122,8 +122,8 @@ section {
 }
 
 .wrap {
-    height: 100%;
-    width: 100%;
+    height: auto;
+    max-width: 100%;
     position: absolute;
 /* this ensures that the images cannot render outside of their container without forcing any scrollbars*/
 overflow: hidden;
@@ -131,7 +131,9 @@ top: 0;
 left: 0;
 text-align: center;
 }
-
+.menu-container ul {
+    list-style-type:none;
+}
 .menu-container {
     max-height: 340px;
     margin: 0% auto;
@@ -155,9 +157,8 @@ HOME SECTION STYLES
     background-attachment: fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
-    -o-background-size: cover;
+    background-size: cover;
     width: 100%;
-    display: block;
     height: auto;
     padding-top: 350px; /*this is spacer before the main title logo*/
     padding-bottom: 500px; /*this is spacer after the main title logo*/
@@ -193,6 +194,10 @@ HOME SECTION STYLES
     padding: 5px 20px 20px 20px;
     border: 1px dotted #fff;
     padding: 5px;
+}
+
+.video {
+    margin-top: 100px;
 }
 
 /*=================
