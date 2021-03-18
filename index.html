@@ -14,14 +14,14 @@
         <!--Navbar-->
         <div class="Navbar">
             <a class="active" href="#Home">Home</a>
+            <!--New selection added-->
+            <a href="#Slideshow">Slideshow</a>
             <a href="#About">About</a>
             <a href="#GitHub">GitHub</a>
             <a href="#Contact">Contact</a>
+            <!--Onclick and ondbclick functions added to open and close the contact form-->
+            <a onclick="openForm()" ondblclick="closeForm()">Contact</a>
         </div>
-
-        <!--Breaks inserted to add space between navbar and the first heading-->
-        <br>
-        <br>
 
         <!--Background video-->
         <div id="Home">
@@ -42,6 +42,47 @@
                     <br> Thank you for stopping by and enjoy! 
                 </p>
             </strong>
+        </div>
+
+        <!--Slideshow section added-->
+        <div id="Slideshow">
+            <div id="Slideshow_Background">
+                <div id="Slideshow_Container">
+                    <!--Slide 1 of 6-->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="images/myface.png" alt="Picture of me">
+                        <div class="text">I'm available to assist you on your project!</div>
+                    </div>
+                    <!--Slide 2 of 6-->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="images/HTML_CSS_and_JavaScript.jpeg" alt="Picture of me">
+                        <div class="text">I'm available to assist you on your project!</div>
+                    </div>
+                    <!--Slide 3 of 6-->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="images/Python.png" alt="Picture of me">
+                        <div class="text">I'm available to assist you on your project!</div>
+                    </div>
+                    <!--Slide 4 of 6-->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="images/C_Sharp_and_Dot_NET.png" alt="Picture of me">
+                        <div class="text">I'm available to assist you on your project!</div>
+                    </div>
+
+                    <!--Previous and next buttons-->
+                    <a class="Previous" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="Next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+                <br> <!--adds a space between the slideshow images and the dots-->
+
+                <!--Slideshow dots (these are another way for users to navigate through the slideshow)-->
+                <div style="text-align: center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                </div>
+            </div>
         </div>
 
         <!--About section-->
@@ -66,7 +107,7 @@
         <!--GitHub section-->
         <div class="Row" id="GitHub">
             <!--Left column-->
-            <div class="Column_1">
+            <div class="Column_2">
                 <h1>GitHub</h1>
                 <p>
                     You can view my coding projects on my GitHub profile here:
@@ -75,33 +116,30 @@
                 </p>
             </div>
             <!--Right column-->
-            <div class="Column_2">
+            <div class="Column_1">
                 <a href="https://github.com/lzou94" target="_blank"><img src="images/GitHub.png" alt="GitHub Logo"></a>
             </div>
         </div>
 
         <!--Contact section-->
-        <div class="Row" id="Contact">
-            <!--Contact image, left column-->
-            <div class="Column_2 Column_tall">
-                <img src="images/Contact.png" alt="Contact_Image">
-            </div>
-            <!--Contact form, right column-->
-            <div class="Column_1 Column_tall">
-                <h1 id="h1fix">Contact</h1>
-                <!--This specifies where and how to send the form data; we are leaving it blank-->
-                <form id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/xknpdppl" method="post">
-                    <fieldset id="fs-frm-inputs">
-                      <label for="full-name">Full Name</label>
-                      <input type="text" name="name" id="full-name" placeholder="First and Last" required="">
-                      <label for="email-address">Email Address</label>
-                      <input type="text" name="_replyto" id="email-address" placeholder="email@domain.tld" required="">
-                      <label for="message">Message</label>
-                      <textarea type=text rows="5" name="message" id="message" placeholder="Aenean lacinia bibendum nulla sed consectetur. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec ullamcorper nulla non metus auctor fringilla nullam quis risus." required=""></textarea>
-                      <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
-                    </fieldset>
-                    <input type="submit" value="Submit">
-                  </form>
+        <div id="Contact">
+            <button onclick="openForm()" class="Pop_Up_Button">CONTACT</button>
+            <div class="form-popup" id="myForm">
+                <form action="https://formspree.io/f/xknpdppl" method="POST" class="form-container">
+                    <h1>Contact</h1>
+                    <label for="name">Full Name</label>
+                        <input type="text" name="name" id="full-name" placeholder="First and Last" required="">
+                    <label for="phone"><b>Phone</b></label>
+                        <input type="text" placeholder="Type your phone number here" name="phone">
+                    <label for="email-address">Email Address</label>
+                        <input type="text" name="_replyto" id="email-address" placeholder="email@domain.tld" required="">
+                    <label for="message">Message</label>
+                        <input type=text rows="5" name="message" id="message" placeholder="Type message here!" required="">Type message here</input>
+                    <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
+                  </fieldset>
+                  <button type="submit" value="Submit">Submit</button>
+                  <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
+                </form>
             </div>
         </div>
 
@@ -112,5 +150,6 @@
                 <br>
             </p>
         </footer>
+        <script src="JS/main.js"></script>
     </body>
 </html>
